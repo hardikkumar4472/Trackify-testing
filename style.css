@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #ffffff00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    animation: fade 30s infinite;
+}
+
+@keyframes fade {
+    0% { background-image: url('1.jpg'); }
+    12.5% { background-image: url('2.jpg'); }
+    25% { background-image: url('3.jpg'); }
+    37.5% { background-image: url('4.jpg'); }
+    50% { background-image: url('5.jpg'); }
+    62.5% { background-image: url('6.jpeg'); }
+    75% { background-image: url('7.jpg'); }
+    87.5% { background-image: url('2.jpg'); }
+    100% { background-image: url('1.jpg'); }
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease-in-out;
+    transform: translateZ(0);
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out;
+    max-width: 90%; 
+    margin: 0 auto; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.typewriter {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    border-right: 2px solid #007bff; 
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+border-color: #007bff;
+    }
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; 
+}
+
+.button {
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    color: #fff;
+    background: linear-gradient(145deg, #007bff, #0056b3);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), 
+                -5px - 5px 15px rgba(255, 255, 255, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1.2em;
+    position: relative;
+    overflow: hidden;
+    min-width: 150px; 
+}
+
+.button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: width 0.5s ease, height 0.5s ease, top 0.5s ease, left 0.5s ease;
+    z-index: 0;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.button:hover::after {
+    width: 400%;
+    height: 400%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0  8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.signup {
+    background: linear-gradient(145deg, #28a745, #218838);
+}
+
+.signup:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .typewriter {
+        font-size: 1.2em;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 1em;
+        flex: 1 1 100%; 
+    }
+}
